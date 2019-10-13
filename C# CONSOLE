@@ -1,0 +1,30 @@
+using System;
+using System.Globalization;
+
+namespace exercicio
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            string produto1 = "computador";
+            string produto2 = "mesa de escritório";
+            byte idade = 30;
+            int codigo = 5290;
+            char genero = 'M';
+            double preco1 = 2100.0;
+            double preco2 = 650.50;
+            double medida = 53.234567;
+            // Escrever na tela com a notação placeholders
+            Console.WriteLine("computador cujo o preço é {0}", preco1);
+            //  Escrever na tela com a notação interpolação
+            Console.WriteLine($" Mesa de escritorio, cujo preço é {preco2}");
+            // Escrever na tela com a notação placeholders
+            Console.WriteLine("Registro: {0} anos de idade, código {1} e gênero: {2}",idade,codigo,genero);
+            //  Escrever na tela com a notação interpolação
+            Console.WriteLine($"Medida com oito casas decimais {medida}");
+            //  Escrever na tela com a notação interpolação usando o f3 para definir as casas decimais
+            Console.WriteLine($"Arredondando {medida:f3} ");
+            // Escrever na tela com a notação concatenação usando invariant culture para substituir a virgula por ponto. declarar o using System.Globalization abaixo do System acima ;
+            Console.WriteLine("Separador decimal invariant culture:" + medida.ToString("F2", CultureInfo.InvariantCulture) );
+
